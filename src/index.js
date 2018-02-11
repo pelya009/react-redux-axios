@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import reducer from './reducers';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import store from './store';
+import { getUsers } from './actions';
 
-import users from './users';
-
-const store = createStore(reducer, users);
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => store.dispatch(getUsers(users)));
 
 ReactDOM.render(<Provider store={store}>
                 <App />

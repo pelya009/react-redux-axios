@@ -1,4 +1,4 @@
-import { ADD_USER, DELETE_USER, EDIT_USER } from '../actions';
+import { GET_USERS, ADD_USER, DELETE_USER, EDIT_USER } from '../actions';
 
 function userReducer(state = {}, action) {
     switch (action.type) {
@@ -6,7 +6,7 @@ function userReducer(state = {}, action) {
             return { 
                 id: action.id,
                 name: action.name 
-            }
+            };
         case EDIT_USER:
             if (state.id !== action.id) {
                 return state;
@@ -21,6 +21,8 @@ function userReducer(state = {}, action) {
 
 export default function reducer(state = [], action) {
     switch (action.type) {
+        case GET_USERS:
+            return action.users;
         case ADD_USER:
             return [...state, userReducer(undefined, action)];
         
