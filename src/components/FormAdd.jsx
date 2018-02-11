@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Button from './Button';
 
-class FormAdd extends React.Component {
+class FormAdd extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
             name: ''
         }
+
+        this.store = this.props.store;
     }
 
     handleSubmit = (event) => {

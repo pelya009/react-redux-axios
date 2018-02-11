@@ -4,10 +4,10 @@ import SingleUser from './SingleUser';
 function UsersList(props) {
     return(
         <div>
-            {props.users.map((user, key) => {
+            {props.users.map(user => {
                 return <SingleUser 
                     name={user.name} 
-                    key={key}
+                    key={user.id}
                     onDelete={props.onDelete}
                     onEdit={props.onEdit}
                     id={user.id}
