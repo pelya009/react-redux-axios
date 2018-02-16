@@ -5,27 +5,17 @@ import { ADD_USER, DELETE_USER, EDIT_USER } from '../actions';
 //     .then(response => response.json())
 //     .then(users => initialState = users);
 
-function userReducer(state = {}, action) {
+export default function reducer(state = {}, action) {
     switch (action.type) {
+        case GET_USERS:
+            return action.names;
+
         case ADD_USER:
-            return { 
+            const user = { 
                 id: action.id,
                 name: action.name 
             };
-        case EDIT_USER:
-            if (state.id !== action.id) {
-                return state;
-            }
-            return {...state, name: action.name };
-        default: 
-            return state;
-    }
-}
-
-export default function reducer(state = [], action) {
-    switch (action.type) {
-        case ADD_USER:
-            return [...state, userReducer(undefined, action)];
+            return [...state, user];
         
         case DELETE_USER:
             const index = state.findIndex(user => user.id === action.id);
@@ -36,8 +26,13 @@ export default function reducer(state = [], action) {
             ];
 
         case EDIT_USER:
-            return state.map(user => userReducer(user, action));
-        
+            return state.map(user => {
+                if (user.id !== action.id) {
+                    return user;
+                }
+                return {...state, name: action.name };
+                });
+
         default:
             return state;
     }
