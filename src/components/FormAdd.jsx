@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from './Button';
 
 class FormAdd extends Component {
     constructor(props) {
@@ -37,7 +36,7 @@ class FormAdd extends Component {
                     value={this.state.name}
                     placeholder="What's new user's name?"
                     onChange={this.handleChange} />
-                <Button type="submit" disabled={disabled}>Add new user</Button>
+                <button type="submit" disabled={disabled}>Add new user</button>
             </form>
         );
     }

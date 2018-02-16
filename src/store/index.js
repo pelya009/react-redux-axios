@@ -1,17 +1,13 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 import reducer from '../reducers';
+//import { getUsers } from '../actions';
 
-const store = createStore(reducer);
 
-const dispatch = store.dispatch;
+const store = createStore(reducer, applyMiddleware(thunk));
 
-store.dispatch = action => {
-    if (typeof action.then === 'function') {
-        return action.then(dispatch);
-    }
+//store.dispatch(getUsers)
 
-    return dispatch(action);
-}
 
 export default store;

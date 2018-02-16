@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from './Button';
 
 class SingleUser extends React.Component {
     constructor(props) {
@@ -36,8 +35,8 @@ class SingleUser extends React.Component {
         return (
             <div className='singleUser'>
                 <span className='showUserName'>{this.props.name}</span>
-                <Button onClick={this.handleEdit}>Edit</Button>
-                <Button onClick={this.handleDelete}>Delete</Button>
+                <button onClick={this.handleEdit}>Edit</button>
+                <button onClick={this.handleDelete}>Delete</button>
             </div>
         );
     }
@@ -46,7 +45,7 @@ class SingleUser extends React.Component {
         return (
             <form onSubmit={this.handleSubmit} className='singleUser'>
                 <input type="text" ref="name" defaultValue={this.props.name} />
-                <Button type="submit">Save</Button>
+                <button type="submit">Save</button>
             </form>
         );
     }

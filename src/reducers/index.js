@@ -1,4 +1,9 @@
-import { GET_USERS, ADD_USER, DELETE_USER, EDIT_USER } from '../actions';
+import { ADD_USER, DELETE_USER, EDIT_USER } from '../actions';
+//import store from '../store';
+// let initialState =[];
+// fetch('https://jsonplaceholder.typicode.com/users')
+//     .then(response => response.json())
+//     .then(users => initialState = users);
 
 function userReducer(state = {}, action) {
     switch (action.type) {
@@ -11,9 +16,7 @@ function userReducer(state = {}, action) {
             if (state.id !== action.id) {
                 return state;
             }
-            return Object.assign({}, state, {
-                name: action.name
-            });
+            return {...state, name: action.name };
         default: 
             return state;
     }
@@ -21,8 +24,6 @@ function userReducer(state = {}, action) {
 
 export default function reducer(state = [], action) {
     switch (action.type) {
-        case GET_USERS:
-            return action.users;
         case ADD_USER:
             return [...state, userReducer(undefined, action)];
         
