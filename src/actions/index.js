@@ -7,6 +7,10 @@ let nextId = 10;
 
 export function getUsers(users) {
         nextId = users.length + 1;
+        console.log({
+            type: GET_USERS,
+            users
+        });
     return {
         type: GET_USERS,
         users

@@ -1,14 +1,9 @@
-import { ADD_USER, DELETE_USER, EDIT_USER } from '../actions';
-//import store from '../store';
-// let initialState =[];
-// fetch('https://jsonplaceholder.typicode.com/users')
-//     .then(response => response.json())
-//     .then(users => initialState = users);
+import { GET_USERS, ADD_USER, DELETE_USER, EDIT_USER } from '../actions';
 
-export default function reducer(state = {}, action) {
+export default function reducer(state = [], action) {
     switch (action.type) {
         case GET_USERS:
-            return action.names;
+            return action.users;
 
         case ADD_USER:
             const user = { 
