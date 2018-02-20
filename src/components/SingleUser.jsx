@@ -34,7 +34,7 @@ class SingleUser extends React.Component {
     renderDisplay() {
         return (
             <div className='singleUser'>
-                <span className='showUserName' key={this.props.id}>{this.props.name}</span>
+                <span className='showUserName'>{this.props.name}</span>
                 <button onClick={this.handleEdit}>Edit</button>
                 <button onClick={this.handleDelete}>Delete</button>
             </div>
