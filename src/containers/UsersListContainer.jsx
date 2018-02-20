@@ -5,7 +5,7 @@ import { getUsers, deleteUser, editUser } from '../actions';
 
 function mapStateToProps(state) {
     return {
-        users: state
+        users: state.users
     };
 }
 

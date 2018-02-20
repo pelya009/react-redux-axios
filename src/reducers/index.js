@@ -1,32 +1,41 @@
 import { GET_USERS, ADD_USER, DELETE_USER, EDIT_USER } from '../actions';
 
-export default function reducer(state = [], action) {
+const initialState = {
+    users: [],
+    nextId: 0
+}
+
+export default function reducer(state = initialState, action) {
     switch (action.type) {
         case GET_USERS:
-            return action.users;
+            return {
+                users: action.users,
+                nextId: action.users.length
+            };
 
         case ADD_USER:
             const user = { 
                 id: action.id,
                 name: action.name 
             };
-            return [...state, user];
+            return {...state, users: [...state.users, user], nextId: state.nextId + 1 };
         
         case DELETE_USER:
-            const index = state.findIndex(user => user.id === action.id);
-
-            return [
-                ...state.slice(0, index),
-                ...state.slice(index + 1)
-            ];
+            return {
+                users: state.users.filter(user => {
+                    return user.id !== action.id;
+                })
+            }
 
         case EDIT_USER:
-            return state.map(user => {
-                if (user.id !== action.id) {
-                    return user;
-                }
-                return {...state, name: action.name };
-                });
+            return {
+                users: state.users.map(user => {
+                        if (user.id !== action.id) {
+                            return user;
+                        }
+                        return {...state, name: action.name };
+                        })
+            }
 
         default:
             return state;
