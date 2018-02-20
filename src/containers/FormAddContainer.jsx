@@ -3,10 +3,8 @@ import FormAdd from '../components/FormAdd';
 
 import { addUser } from '../actions';
 
-function mapDispatchToProps(dispatch) {
-    return {
-        onAdd: name => dispatch(addUser(name))
-    };
+const mapDispatchToProps = {
+        addUser
 } 
 
 const FormAddContainer = connect(null, mapDispatchToProps)(FormAdd)

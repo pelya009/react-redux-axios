@@ -9,12 +9,10 @@ function mapStateToProps(state) {
     };
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        onDelete: id => dispatch(deleteUser(id)),
-        onEdit: (id, name) => dispatch(editUser(id, name)),
-        onGet: names => dispatch(getUsers(names))
-    };
+const mapDispatchToProps = {
+        deleteUser,
+        editUser,
+        getUsers
 };
 
 const UsersListContainer = connect(mapStateToProps, mapDispatchToProps)(UsersList);

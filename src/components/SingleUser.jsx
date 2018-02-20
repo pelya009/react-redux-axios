@@ -19,12 +19,12 @@ class SingleUser extends React.Component {
 
         const name = this.refs.name.value;
         
-        this.props.onEdit(this.props.id, name);
+        this.props.editUser(this.props.id, name);
         this.setState({ editing: false });
     }
 
     handleDelete = () => {
-        this.props.onDelete(this.props.id);
+        this.props.deleteUser(this.props.id);
     }
 
     handleEdit = () => {

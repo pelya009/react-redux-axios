@@ -4,10 +4,7 @@ import SingleUser from './SingleUser';
 class UsersList extends React.Component {
     
     componentDidMount() {
-
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(users => this.props.onGet(users))
+            this.props.getUsers();
         }
 
     render() {
@@ -17,8 +14,8 @@ class UsersList extends React.Component {
                     return <SingleUser 
                         name={user.name} 
                         key={user.id}
-                        onDelete={this.props.onDelete}
-                        onEdit={this.props.onEdit}
+                        deleteUser={this.props.deleteUser}
+                        editUser={this.props.editUser}
                         id={user.id}
                     />
                 })}

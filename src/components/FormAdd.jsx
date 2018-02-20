@@ -16,7 +16,7 @@ class FormAdd extends Component {
         const name = this.state.name
 
         if (name) {
-            this.props.onAdd(name);
+            this.props.addUser(name);
             this.setState({ name: '' });
         }
     }
