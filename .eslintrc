@@ -1,0 +1,73 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+
+  "parser": "babel-eslint",
+
+  "env": {
+    "browser": true
+  },
+
+  "globals": {
+    "React": true,
+    "_": true,
+    "Promise": true,
+    "moment": true,
+    "APP_VERSION": true,
+    "WSS_URL": true,
+    "BASENAME": true,
+    "API_URL": true,
+    "DOMAIN_URL": true,
+    "SCHEMA_URL": true,
+    /* tests */
+    "describe": false,
+    "it": false,
+    "test": false,
+    "before": false,
+    "beforeEach": false,
+    "after": false,
+    "afterEach": false,
+    "expect": false
+  },
+
+  "plugins": [
+    "react"
+  ],
+
+  "extends": [
+    "airbnb"
+  ],
+
+  "rules": {
+    "no-console": ["error", {
+      "allow": ["log", "error"]
+    }],
+    "no-debugger": 0,
+    "linebreak-style": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/href-no-hash": 0,
+    "jsx-a11y/anchor-is-valid": [ "error", { "components": [ "Link" ], "specialLink": [ "to" ] } ],
+    "jsx-quotes": ["error", "prefer-single"],
+    "arrow-parens": ["error", "as-needed"],
+    "import/no-named-as-default": 0,
+    "no-else-return": 0,
+    "array-callback-return": 0,
+    "no-underscore-dangle": ["error", {
+      "allow": []
+    }],
+    "import/no-mutable-exports": 0,
+    "no-shadow": 0,
+    "no-bitwise": ["error", { "int32Hint": true }],
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+    "import/prefer-default-export": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "no-restricted-globals": ["error", "event", "fdescribe"]
+  }
+}

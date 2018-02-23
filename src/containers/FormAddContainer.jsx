@@ -4,9 +4,9 @@ import FormAdd from '../components/FormAdd';
 import { addUser } from '../actions';
 
 const mapDispatchToProps = {
-        addUser
-} 
+  addUser,
+};
 
-const FormAddContainer = connect(null, mapDispatchToProps)(FormAdd)
+const FormAddContainer = connect(null, mapDispatchToProps)(FormAdd);
 
 export default FormAddContainer;

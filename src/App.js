@@ -4,12 +4,12 @@ import UsersListContainer from './containers/UsersListContainer';
 import FormAddContainer from './containers/FormAddContainer';
 
 function App() {
-    return (
-      <div className="App">
-        <UsersListContainer />
-        <FormAddContainer />  
-      </div>
-    );
+  return (
+    <div className='App'>
+      <UsersListContainer />
+      <FormAddContainer />
+    </div>
+  );
 }
 
 export default App;
