@@ -12,24 +12,20 @@ export const getUsers = () => dispatch => {
     }));
 };
 
-export function addUser(name) {
-  return {
-    type: ADD_USER,
-    name,
-  };
-}
+export const addUser = name => ({
+  type: ADD_USER,
+  name,
+});
 
-export function deleteUser(id) {
-  return {
-    type: DELETE_USER,
-    id,
-  };
-}
+export const deleteUser = id => ({
+  type: DELETE_USER,
+  id,
+});
 
-export function editUser(id, name) {
-  return {
-    type: EDIT_USER,
-    id,
-    name,
-  };
-}
+
+export const editUser = (id, name) => ({
+  type: EDIT_USER,
+  id,
+  name,
+});
+

@@ -5,7 +5,7 @@ const initialState = {
   nextId: 0,
 };
 
-export default function reducer(state = initialState, action) {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_USERS:
       return {
@@ -40,4 +40,6 @@ export default function reducer(state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default reducer;

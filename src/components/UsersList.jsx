@@ -25,7 +25,7 @@ class UsersList extends React.Component {
 export default UsersList;
 
 UsersList.propTypes = {
-  users: PropTypes.ArrayOf(PropTypes.object).isRequired,
+  users: PropTypes.arrayOf(PropTypes.object).isRequired,
   getUsers: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
   editUser: PropTypes.func.isRequired,
