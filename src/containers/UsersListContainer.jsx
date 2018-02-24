@@ -3,11 +3,7 @@ import { connect } from 'react-redux';
 import UsersList from '../components/UsersList';
 import { getUsers, deleteUser, editUser } from '../actions';
 
-function mstp(state) {
-  return {
-    users: state.users,
-  };
-}
+const mstp = ({ users }) => ({ users });
 
 const mdtp = {
   deleteUser,
