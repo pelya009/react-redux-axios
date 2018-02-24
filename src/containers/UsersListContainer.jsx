@@ -3,18 +3,18 @@ import { connect } from 'react-redux';
 import UsersList from '../components/UsersList';
 import { getUsers, deleteUser, editUser } from '../actions';
 
-function mapStateToProps(state) {
+function mstp(state) {
   return {
     users: state.users,
   };
 }
 
-const mapDispatchToProps = {
+const mdtp = {
   deleteUser,
   editUser,
   getUsers,
 };
 
-const UsersListContainer = connect(mapStateToProps, mapDispatchToProps)(UsersList);
+const UsersListContainer = connect(mstp, mdtp)(UsersList);
 
 export default UsersListContainer;

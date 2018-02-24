@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class SingleUser extends React.Component {
   constructor(props) {
@@ -8,16 +9,16 @@ class SingleUser extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     if (this.state.editing) {
-      this.refs.name.focus();
+      this.name.focus();
     }
   }
 
     handleSubmit = event => {
       event.preventDefault();
 
-      const name = this.refs.name.value;
+      const name = this.name.value;
 
       this.props.editUser(this.props.id, name);
       this.setState({ editing: false });
@@ -44,7 +45,7 @@ class SingleUser extends React.Component {
     renderForm() {
       return (
         <form onSubmit={this.handleSubmit} className='singleUser'>
-          <input type='text' ref='name' defaultValue={this.props.name} />
+          <input type='text' ref={c => { this.name = c; }} defaultValue={this.props.name} />
           <button type='submit'>Save</button>
         </form>
       );
@@ -56,3 +57,10 @@ class SingleUser extends React.Component {
 }
 
 export default SingleUser;
+
+SingleUser.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  editUser: PropTypes.func.isRequired,
+  deleteUser: PropTypes.func.isRequired,
+};
