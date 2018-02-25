@@ -8,24 +8,26 @@ export const getUsers = () => dispatch => {
     .then(response => response.json())
     .then(users => dispatch({
       type: GET_USERS,
-      users,
+      payload: users,
     }));
 };
 
 export const addUser = name => ({
   type: ADD_USER,
-  name,
+  payload: name,
 });
 
 export const deleteUser = id => ({
   type: DELETE_USER,
-  id,
+  payload: id,
 });
 
 
 export const editUser = (id, name) => ({
   type: EDIT_USER,
-  id,
-  name,
+  payload: {
+    id,
+    name,
+  },
 });
 
