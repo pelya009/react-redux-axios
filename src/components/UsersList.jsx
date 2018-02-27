@@ -10,12 +10,12 @@ class UsersList extends React.Component {
   render() {
     return (
       <div>
-        {console.log(this.props.users)}
         {this.props.users.map(user => (<SingleUser
           name={user.name}
           key={user.id}
           deleteUser={this.props.deleteUser}
           editUser={this.props.editUser}
+          getTodos={this.props.getTodos}
           id={user.id}
         />))}
       </div>
@@ -30,4 +30,5 @@ UsersList.propTypes = {
   getUsers: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
   editUser: PropTypes.func.isRequired,
+  getTodos: PropTypes.func.isRequired,
 };

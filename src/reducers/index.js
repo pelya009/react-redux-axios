@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-import users from './users';
-import todos from './todos';
+import usersReducer from './usersReducer';
+import todosReducer from './todosReducer';
 
 export default combineReducers({
-  users,
-  todos,
+  usersReducer,
+  todosReducer,
 });
 

@@ -32,13 +32,17 @@ class SingleUser extends React.Component {
       this.setState({ editing: true });
     }
 
+    handleTodos = () => {
+      this.props.getTodos(this.props.id);
+    }
+
     renderDisplay() {
       return (
         <div className='singleUser'>
           <span className='showUserName'>{this.props.name}</span>
           <button onClick={this.handleEdit}>Edit</button>
           <button onClick={this.handleDelete}>Delete</button>
-          <button>ShowTodos</button>
+          <button onClick={this.handleTodos}>ShowTodos</button>
         </div>
       );
     }
@@ -64,4 +68,5 @@ SingleUser.propTypes = {
   name: PropTypes.string.isRequired,
   editUser: PropTypes.func.isRequired,
   deleteUser: PropTypes.func.isRequired,
+  getTodos: PropTypes.func.isRequired,
 };

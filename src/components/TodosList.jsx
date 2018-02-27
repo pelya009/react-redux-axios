@@ -9,6 +9,9 @@ class TodosList extends React.Component {
         {this.props.todos.map(todo => (<SingleTodo
           key={todo.id}
           id={todo.id}
+          title={todo.title}
+          completed={todo.completed}
+          toggleTodo={this.props.toggleTodo}
         />))}
       </div>
     );
@@ -16,3 +19,8 @@ class TodosList extends React.Component {
 }
 
 export default TodosList;
+
+TodosList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+  toggleTodo: PropTypes.func.isRequired,
+};
