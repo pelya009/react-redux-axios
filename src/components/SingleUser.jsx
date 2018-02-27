@@ -38,6 +38,7 @@ class SingleUser extends React.Component {
           <span className='showUserName'>{this.props.name}</span>
           <button onClick={this.handleEdit}>Edit</button>
           <button onClick={this.handleDelete}>Delete</button>
+          <button>ShowTodos</button>
         </div>
       );
     }
